@@ -1,0 +1,77 @@
+create external table transacao
+(
+valor int,
+saldo decimal(10,0),
+taxa decimal(10,0),
+hora int,
+dtimestamp TIMESTAMP,
+dataTransacao bigint,
+agencia varchar(200),
+banco varchar(200),
+conta varchar(200),
+documento varchar(200),
+tipoOperacao varchar(200),
+tipoTransacao varchar(200),
+cnae varchar(200),
+codigoCliente int,
+documento1 varchar(200),
+estadoCivil varchar(200),
+faixaEtaria varchar(200),
+faixaRenda varchar(200),
+genero varchar(200),
+tipoCliente varchar(200),
+tipoPessoa varchar(200),
+versaoCliente int,
+agencia1 varchar(200),
+cidade varchar(200))
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/grupod/DW/'
+;
+
+create external table negociacao
+(
+valor decimal(12,0),
+quantidade decimal(10,0),
+dataNegociacao TIMESTAMP,
+agencia varchar(200),
+cidade varchar(200),
+numeroContrato varchar(200),
+versaoContrato varchar(200),
+cnae varchar(200),
+codigoCliente int,
+documento varchar(200),
+estadoCivil varchar(200),
+faixaEtaria varchar(200),
+faixaRenda varchar(200),
+genero varchar(200),
+tipoCliente varchar(200),
+tipoPessoa varchar(200),
+versaoCliente int,
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/grupod/DW/'
+
+create external table vigenciaConta
+(
+idConta int,
+dataAbertura TIMESTAMP,
+dataFechamento TIMESTAMP,
+agencia varchar(200),
+cidade varchar(200),
+cnae varchar(200),
+codigoCliente int,
+documento varchar(200),
+estadoCivil varchar(200),
+faixaEtaria varchar(200),
+faixaRenda varchar(200),
+genero varchar(200),
+tipoCliente varchar(200),
+tipoPessoa varchar(200),
+versaoCliente varchar(200))
+row format delimited
+fields terminated by ','
+stored as textfile
+location '/grupod/DW/'
