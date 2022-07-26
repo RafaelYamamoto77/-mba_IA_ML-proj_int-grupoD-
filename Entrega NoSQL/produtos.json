@@ -1,0 +1,95 @@
+{
+ "produtos": {
+  "investimento": [
+    {
+     "id": "1",
+     "nomeProduto": "Petroleo Brasileiro SA Petrobras Preference Shares",
+     "codigoProduto": "PETR4",
+     "tipo": "Renda Variável",
+     "mktVal": "R$29,61",
+     "emissor": "PETROBRAS",
+     "bolsaNegociacao": "B3",
+     "pais": "Brasil",
+     "mktVal 30D": "9,72%",
+     "mktVal YTD": "5,53%%",
+     "mktVal 365D": "11,76%",
+     "indexador": ""
+    },
+    {
+     "id": "2",
+     "nomeProduto": "Tesouro Selic 2025",
+     "codigoProduto": "LFT25",
+     "tipo": "Renda Variável",
+     "mktVal": "R$738,83",
+     "emissor": "Tesouro Nacional",
+     "bolsaNegociacao": "Selic",
+     "pais": "Brasil",
+     "mktVal 30D": "0,5%",
+     "mktVal YTD": "0,4%",
+     "mktVal 365D": "0,4%",
+     "indexador: "Selic"
+    },
+    {
+     "id": "3",
+     "nomeProduto": "Apple Inc",
+     "codigoProduto": "AAPL",
+     "tipo": "Renda Variável",
+     "mktVal": "USD$152,95",
+     "emissor": "Apple",
+     "bolsaNegociacao": "NASDAQ",
+     "pais": "EUA",
+     "mktVal 30D": "7,97%",
+     "mktVal YTD": "-15,97%",
+     "mktVal 365D": "2,66%",
+     "indexador: ""
+    }
+   ],
+  "proprio": [
+    {
+      "id": "4",
+      nomeProduto: "Fundo de Investimento Multimercado Brasil Ações LS"
+      "codigoProduto": "FIMMLSBR",
+      "taxaAdmAA": "2%",
+      "performanceFeeCobrado": "20% sobre exceder 100% IPCA",
+      "perfilInvestimento": "Qualificado",
+      "valorMinimoInvestimento": "R$1,00",
+      "prazoCotaAplicacao": "D+0",
+      "prazoCotaResgate": "D+1",
+      "prazoResgate": "D+2"
+      "retorno1M": "1,5%",
+      "retorno6M": "4,75%",
+      "retorno1A": "9,53%"
+    },
+    {
+      "id": "5",
+      nomeProduto: "Fundo de Investimento Renda Fixa"
+      "codigoProduto": "FIRF",
+      "taxaAdmAA": "1%",
+      "performanceFeeCobrado": "14% sobre 100% IPCA",
+      "perfilInvestimento": "Conservador",
+      "valorMinimoInvestimento": "R$10,00",
+      "prazoCotaAplicacao": "D+0",
+      "prazoCotaResgate": "D+1",
+      "prazoResgate": "D+2"
+      "retorno1M": "1,5%",
+      "retorno6M": "2,5%",
+      "retorno1A": "6,5%"
+    },
+    {
+      "id": "6",
+      nomeProduto: "Fundo de Investimento Futuro de Dolar"
+      "codigoProduto": "FIDOL",
+      "taxaAdmAA": "1%",
+      "performanceFeeCobrado": "22% sobre 100% IPCA",
+      "perfilInvestimento": "Qualificado",
+      "valorMinimoInvestimento": "R$5,00",
+      "prazoCotaAplicacao": "D+0",
+      "prazoCotaResgate": "D+1",
+      "prazoResgate": "D+2"
+      "retorno1M": "1,5%",
+      "retorno6M": "3%",
+      "retorno1A": "7%"
+    }
+  ]
+ }
+}
