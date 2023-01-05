@@ -1,0 +1,50 @@
+---
+title: "Projeto Inadimplencia"
+output: html_document
+date: "2022-12-11"
+---
+install.packages("readr")
+
+install.packages("ggplot2")
+install.packages("devtools")
+install.packages("gmodels")
+install.packages("tidyr")
+install.packages("rpart")
+install.packages("rpart.plot")
+install.packages("dplyr")
+install.packages("randomForest")
+install.packages("caret")
+
+
+install.packages("Hmisc")
+library("Hmisc")
+library("tidyr")
+library(rpart)
+library(rpart.plot)
+library(dplyr)
+library(randomForest)
+library("ggplot2")
+library(caret)
+library("readr")
+
+getwd()
+data <- read.csv("loan_default_data_loan_default.csv")
+data[data == NA] <- 0
+head(data)
+str(data)
+dataRemove <-subset(data, select = -c(ID, year, rate_of_interest, Interest_rate_spread,	Upfront_charges, dtir1))
+print(dataRemove)
+dataClean <- na.omit(dataRemove)
+
+
+print(dataClean)
+summary(dataClean)
+head(dataClean)
+
+
+saidaStatus <- glm(formula = Status ~ loan_amount + Gender, data = dataClean, family = binomial)
+
+newdata <- data.frame(loan_amount = 676500, Gender = 'Male')
+predict(saidaStatus, newdata, type = "response")
+
+saveRDS(saidaStatus, "saidaStatus.rds")

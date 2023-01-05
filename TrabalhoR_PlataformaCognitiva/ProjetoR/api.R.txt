@@ -1,0 +1,32 @@
+#
+# This is a Plumber API. You can run the API by clicking
+# the 'Run API' button above.
+#
+# Find out more about building APIs with Plumber here:
+#
+#    https://www.rplumber.io/
+#
+source("api.R", echo = TRUE, keep.source = T, max.deparse.length = 1000)
+library(plumber)
+
+model <- readRDS("saidaStatus.rds")
+#* Plot a histogram of the manual transmission
+#* @png
+#* @get /plotam
+plot_saida <- function(){
+  barplot(table(dataClean$Status))
+}
+
+#* Returns the probability 
+#* @param loan_amount 
+#* @param Gender 
+#* @post /Saida
+
+model_predict <- function(loan_amount, Gender){
+newdata <- data.frame(loan_amount = as.numeric(loan_amount), Gender = as.character(Gender))
+predict(model, newdata, type = "response")
+}
+
+plot_saida
+
+model_predict(676500,"Female")
