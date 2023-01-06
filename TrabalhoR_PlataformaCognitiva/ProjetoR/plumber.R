@@ -43,10 +43,10 @@ function(a, b) {
 #* Return prediction
 #* @param JSON contaning data to predict
 #* @post /predict
-function(json){
-  df <- fromJSON(createjson)
-  
-  predicao <- predict(model, df2, type = "response")
+function(loan_amount, Gender){
+  df<- data.frame(loan_amount = loan_amount,
+                  Gender = Gender)
+  predicao <- predict(model, df, type = "response")
   
   jsonretorno <- toJSON(predicao)
   return (jsonretorno)

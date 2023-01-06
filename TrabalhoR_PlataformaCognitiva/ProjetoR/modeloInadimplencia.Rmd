@@ -4,7 +4,6 @@ output: html_document
 date: "2022-12-11"
 ---
 install.packages("readr")
-
 install.packages("ggplot2")
 install.packages("devtools")
 install.packages("gmodels")
@@ -14,9 +13,14 @@ install.packages("rpart.plot")
 install.packages("dplyr")
 install.packages("randomForest")
 install.packages("caret")
-
-
 install.packages("Hmisc")
+install.packages("remotes")
+remotes::install_cran("azuremlsdk")
+remotes::install_github('https://github.com/Azure/azureml-sdk-for-r')
+azuremlsdk::install_azureml(remove_existing_env = TRUE)
+reticulate::py_install("azureml-dataprep==1.4.2", envname = "r-reticulate", pip = TRUE)
+
+
 library("Hmisc")
 library("tidyr")
 library(rpart)
@@ -26,9 +30,14 @@ library(randomForest)
 library("ggplot2")
 library(caret)
 library("readr")
+library("azuremlsdk")
+
 
 getwd()
+
 data <- read.csv("loan_default_data_loan_default.csv")
+
+
 data[data == NA] <- 0
 head(data)
 str(data)
@@ -41,6 +50,11 @@ print(dataClean)
 summary(dataClean)
 head(dataClean)
 
+name <- "grupo-demo-01iar01"
+
+ws <- get_workspace(name, subscription_id = "c40d32a1-644a-434d-8a67-8e2b12e4d891", resource_group = "Turma01IAR")
+
+experiment(ws, "inadimplencia_r")
 
 saidaStatus <- glm(formula = Status ~ loan_amount + Gender, data = dataClean, family = binomial)
 
